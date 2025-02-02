@@ -24,7 +24,7 @@ This is a simple Laravel project demonstrating Stripe Payment Gateway integratio
 ``
 git clone https://github.com/your-username/stripe-laravel-demo.git
 cd stripe-laravel-demo
-``
+
 3. Install Dependencies
 <br/>
 `` composer install
