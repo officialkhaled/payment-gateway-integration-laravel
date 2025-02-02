@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Stripe;
 use Session;
 use Stripe\Charge;
 use Stripe\Customer;
@@ -25,23 +24,25 @@ class StripePaymentController extends Controller
                 "email" => $request->email,
                 "source" => $request->stripeToken,
                 "address" => [
-                    "line1" => $request->address,
-                    "city" => "Unknown",
-                    "country" => "US"
+                    "line1" => $request->line,
+                    "city" => $request->city,
+                    "country" => $request->country
                 ],
             ]);
 
-            $charge = Charge::create([
-                "amount" => intval($request->rate * 100),
+            $amount = ($request->quantity * $request->rate);
+
+            Charge::create([
+                "amount" => intval($amount * 100),
                 "currency" => $request->currency ?? "usd",
                 "customer" => $customer->id,
                 "description" => $request->description,
                 "shipping" => [
                     "name" => $request->name,
                     "address" => [
-                        "line1" => $request->address,
-                        "city" => "Unknown",
-                        "country" => "US"
+                        "line1" => $request->line,
+                        "city" => $request->city,
+                        "country" => $request->country
                     ]
                 ]
             ]);

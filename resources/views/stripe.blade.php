@@ -3,14 +3,14 @@
 
     <div class="panel panel-default credit-card-box" style="margin-top: 40px;">
         <div class="panel-heading display-table">
-            <h2 class="text-center">Stripe Payment Gateway Integration by <span class="text-info">khaled.dev</span></h2>
+            <h2 style="font-weight: bold; margin-top: 10px;" class="text-center">Stripe Payment Gateway Integration by <span class="text-info">khaled.dev</span></h2>
         </div>
     </div>
 
     <br/>
 
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row container">
+        <div class="col-md-12 col-md-offset-3">
             @if (Session::has('success'))
                 <div class="alert alert-success text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -24,7 +24,7 @@
         <div class="col-md-4 col-md-offset-2">
             <div class="panel panel-default credit-card-box">
                 <div class="panel-heading display-table">
-                    <h3 class="panel-title">Payment Details</h3>
+                    <h3 class="panel-title" style="font-weight: bold;">Payment Details</h3>
                 </div>
 
                 <div class="panel-body">
@@ -39,31 +39,41 @@
                         </div>
                         <div class='col-xs-4 form-group'>
                             <label class='control-label'>Product Quantity</label>
-                            <input class='form-control' name="quantity" id="quantity" type='number' placeholder="Email">
+                            <input class='form-control' name="quantity" id="quantity" type='number' placeholder="Quantity">
                         </div>
                     </div>
-
                     <div class='form-row row'>
-                        <div class='col-xs-12 form-group'>
-                            <label class='control-label'>Address</label>
-                            <input class='form-control' name="address" id="address" type='text' placeholder="Address">
+                        <div class='col-xs-4 form-group'>
+                            <label class='control-label'>Line</label>
+                            <input class='form-control' name="line" id="line" type='text' placeholder="Line">
+                        </div>
+                        <div class='col-xs-4 form-group'>
+                            <label class='control-label'>City</label>
+                            <input class='form-control' name="city" id="city" type='text' placeholder="City">
+                        </div>
+                        <div class='col-xs-4 form-group'>
+                            <label class='control-label'>Country</label>
+                            <input class='form-control' name="country" id="country" type='text' placeholder="Country">
                         </div>
                     </div>
-
                     <div class='form-row row'>
                         <div class='col-xs-6 form-group'>
                             <label class='control-label'>Currency</label>
-                            <input class='form-control' name="currency" id="currency" type='text' placeholder="USD">
+                            <select name="currency" id="currency" class='form-control select2'>
+                                <option value="">Select</option>
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                            </select>
                         </div>
                         <div class='col-xs-6 form-group'>
                             <label class='control-label'>Rate</label>
-                            <input class='form-control' name="rate" id="rate" type='number' placeholder="120">
+                            <input class='form-control' name="rate" id="rate" type='number' placeholder="Rate">
                         </div>
                     </div>
                     <div class='form-row row'>
                         <div class='col-xs-12 form-group'>
                             <label class='control-label'>Description</label>
-                            <input class='form-control' name="description" id="description" type='text' placeholder="Description">
+                            <textarea class='form-control' name="description" id="description" cols="30" rows="2" placeholder="Description"></textarea>
                         </div>
                     </div>
                 </div>
@@ -73,7 +83,7 @@
         <div class="col-md-4">
             <div class="panel panel-default credit-card-box">
                 <div class="panel-heading display-table">
-                    <h3 class="panel-title">Card Details</h3>
+                    <h3 class="panel-title" style="font-weight: bold;">Card Details</h3>
                 </div>
 
                 <div class="panel-body">
@@ -84,7 +94,9 @@
                         <input type="hidden" name="name" id="hidden-name">
                         <input type="hidden" name="quantity" id="hidden-quantity">
                         <input type="hidden" name="email" id="hidden-email">
-                        <input type="hidden" name="address" id="hidden-address">
+                        <input type="hidden" name="line" id="hidden-line">
+                        <input type="hidden" name="city" id="hidden-city">
+                        <input type="hidden" name="country" id="hidden-country">
                         <input type="hidden" name="currency" id="hidden-currency">
                         <input type="hidden" name="rate" id="hidden-rate">
                         <input type="hidden" name="description" id="hidden-description">
@@ -150,7 +162,9 @@
                 $('#hidden-name').val($('#name').val());
                 $('#hidden-email').val($('#email').val());
                 $('#hidden-quantity').val($('#quantity').val());
-                $('#hidden-address').val($('#address').val());
+                $('#hidden-line').val($('#line').val());
+                $('#hidden-city').val($('#city').val());
+                $('#hidden-country').val($('#country').val());
                 $('#hidden-currency').val($('#currency').val());
                 $('#hidden-rate').val($('#rate').val());
                 $('#hidden-description').val($('#description').val());
