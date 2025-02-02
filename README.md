@@ -48,7 +48,7 @@ STRIPE_SECRET=your_stripe_secret_key
 
 4. Serve the Application
 <br/>
-Now, open [http://127.0.0.1:8000/stripe](http://127.0.0.1:8000/stripe) in your browser.
+Now, open http://127.0.0.1:8000/stripe in your browser.
 
 
 ## Usage
