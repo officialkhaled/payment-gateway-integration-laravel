@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Stripe;
 use Session;
+use Stripe\Charge;
+use Stripe\Customer;
 use Illuminate\Http\Request;
 
 class StripePaymentController extends Controller
@@ -15,18 +17,41 @@ class StripePaymentController extends Controller
 
     public function stripePost(Request $request)
     {
-        dd($request->all());
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        Stripe\Charge::create([
-            "amount" => 100 * 100,
-            "currency" => "usd",
-            "source" => $request->stripeToken,
-            "description" => "Test payment from SLS"
-        ]);
+        try {
+            $customer = Customer::create([
+                "name" => $request->name,
+                "email" => $request->email,
+                "source" => $request->stripeToken,
+                "address" => [
+                    "line1" => $request->address,
+                    "city" => "Unknown",
+                    "country" => "US"
+                ],
+            ]);
 
-        Session::flash('success', 'Payment successful!');
+            $charge = Charge::create([
+                "amount" => intval($request->rate * 100),
+                "currency" => $request->currency ?? "usd",
+                "customer" => $customer->id,
+                "description" => $request->description,
+                "shipping" => [
+                    "name" => $request->name,
+                    "address" => [
+                        "line1" => $request->address,
+                        "city" => "Unknown",
+                        "country" => "US"
+                    ]
+                ]
+            ]);
 
-        return back();
+            Session::flash('success', 'Payment successful!');
+
+            return back();
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
+
 }
