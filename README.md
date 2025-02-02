@@ -33,15 +33,13 @@ composer install
 npm install
 ```
 3. Set Up Environment
-<br/>
-Copy the .env.example file and update it:
+  - Copy the .env.example file and update it:
 
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
-<br/>
-Update .env File with Stripe API Keys
+  - Update .env File with Stripe API Keys
 
 ```bash
 STRIPE_KEY=your_stripe_public_key
