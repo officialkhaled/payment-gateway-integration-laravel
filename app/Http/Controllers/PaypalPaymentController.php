@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Session;
-use Stripe\Charge;
-use Stripe\Customer;
 use Illuminate\Http\Request;
 
 class PaypalPaymentController extends Controller
