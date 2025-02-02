@@ -21,15 +21,14 @@ This is a simple Laravel project demonstrating Stripe Payment Gateway integratio
 
 1. Clone the Repository
 <br/>
-``
-git clone https://github.com/your-username/stripe-laravel-demo.git
-cd stripe-laravel-demo
+``git clone https://github.com/your-username/stripe-laravel-demo.git
+cd stripe-laravel-demo``
 
-3. Install Dependencies
+2. Install Dependencies
 <br/>
 `` composer install
 npm install ``
-4. Set Up Environment
+3. Set Up Environment
 <br/>
 Copy the .env.example file and update it:
 <br/>
@@ -41,7 +40,7 @@ Update .env File with Stripe API Keys
 `` STRIPE_KEY=your_stripe_public_key
 STRIPE_SECRET=your_stripe_secret_key ``
 
-5. Serve the Application
+4. Serve the Application
 <br/>
 Now, open [http://127.0.0.1:8000/stripe] in your browser.
 
