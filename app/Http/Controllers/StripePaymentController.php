@@ -34,7 +34,7 @@ class StripePaymentController extends Controller
 
             Charge::create([
                 "amount" => intval($amount * 100),
-                "currency" => $request->currency ?? "usd",
+                "currency" => "usd",
                 "customer" => $customer->id,
                 "description" => $request->description,
                 "shipping" => [

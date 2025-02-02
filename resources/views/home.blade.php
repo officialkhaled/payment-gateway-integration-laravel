@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <style>
-        /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
         *, ::after, ::before {
             box-sizing: border-box;
             border-width: 0;
@@ -777,6 +776,11 @@
                 padding: 2rem
             }
         }
+
+        .hover-text-effect:hover {
+            color: #EF4444;
+            transition: 0.3s ease-out;
+        }
     </style>
 </head>
 
@@ -791,7 +795,7 @@
                         <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                             <i class="fa-brands fa-stripe" style="font-size: 28px; color: #EF4444;"></i>
                         </div>
-                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Stripe</h2>
+                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white"><span class="hover-text-effect">Stripe</span></h2>
                     </div>
                 </a>
 
@@ -800,7 +804,7 @@
                         <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                             <i class="fa-brands fa-paypal" style="font-size: 28px; color: #EF4444;"></i>
                         </div>
-                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">PayPal</h2>
+                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white"><span class="hover-text-effect">PayPal</span></h2>
                     </div>
                 </a>
 
@@ -809,7 +813,7 @@
                         <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                             <img src="{{ asset('assets/images/bkash.png') }}" style="width: 60px;" alt="bKash logo">
                         </div>
-                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">bKash</h2>
+                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white"><span class="hover-text-effect">bKash</span></h2>
                     </div>
                 </a>
 
@@ -818,7 +822,7 @@
                         <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                             <i class="fa-brands fa-cc-amazon-pay" style="font-size: 28px; color: #EF4444;"></i>
                         </div>
-                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Amazon Pay</h2>
+                        <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white"><span class="hover-text-effect">Amazon Pay</span></h2>
                     </div>
                 </a>
             </div>
