@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form role="form" action="{{ route('stripe.post') }}" method="post" class="require-validation"
+                    <form role="form" action="{{ route('paypal.store') }}" method="post" class="require-validation"
                           data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                         @csrf
 

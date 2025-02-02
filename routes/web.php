@@ -2,12 +2,29 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\PaypalPaymentController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::controller(StripePaymentController::class)->group(function () {
-    Route::get('stripe', 'stripe');
-    Route::post('stripe', 'stripePost')->name('stripe.post');
+Route::group(['prefix' => 'stripe', 'as' => 'stripe.'], function () {
+    Route::controller(StripePaymentController::class)->group(function () {
+        Route::get('home', 'index')->name('index');
+        Route::post('', 'store')->name('store');
+    });
+});
+
+Route::group(['prefix' => 'paypal', 'as' => 'paypal.'], function () {
+    Route::controller(PaypalPaymentController::class)->group(function () {
+        Route::get('home', 'index')->name('index');
+        Route::post('', 'store')->name('store');
+    });
+});
+
+Route::group(['prefix' => 'bkash', 'as' => 'bkash.'], function () {
+    Route::controller(PaypalPaymentController::class)->group(function () {
+        Route::get('home', 'index')->name('index');
+        Route::post('', 'store')->name('store');
+    });
 });

@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 
 class StripePaymentController extends Controller
 {
-    public function stripe()
+    public function index()
     {
-        return view('stripe');
+        return view('stripe.index');
     }
 
-    public function stripePost(Request $request)
+    public function store(Request $request)
     {
         \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
@@ -47,7 +47,7 @@ class StripePaymentController extends Controller
                 ]
             ]);
 
-            Session::flash('success', 'Payment successful!');
+            Session::flash('success', 'Stripe Payment Successful!');
 
             return back();
         } catch (\Exception $e) {
