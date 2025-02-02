@@ -1,8 +1,13 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
+</p>
 
 ## Stripe Payment Gateway Integration with Laravel v10
 
 This is a simple Laravel project demonstrating Stripe Payment Gateway integration. It allows users to enter payment details and process transactions securely using Stripe.
+
 
 ## Features
 
@@ -11,43 +16,42 @@ This is a simple Laravel project demonstrating Stripe Payment Gateway integratio
 ✅ Frontend validation before submitting payment
 ✅ Laravel Session Flash Messages for success/error responses
 
+
 ## Installation
 
-1. Clone the Repository:
-``
-git clone https://github.com/your-username/stripe-laravel-demo.git
-cd stripe-laravel-demo
-``
+1. Clone the Repository
+<br/>
+`` git clone https://github.com/your-username/stripe-laravel-demo.git
+cd stripe-laravel-demo ``
+2. Install Dependencies
+<br/>
+`` composer install
+npm install ``
+3. Set Up Environment
+<br/>
+Copy the .env.example file and update it:
+<br/>
+`` cp .env.example .env
+php artisan key:generate ``
+<br/>
+Update .env File with Stripe API Keys
+<br/>
+`` STRIPE_KEY=your_stripe_public_key
+STRIPE_SECRET=your_stripe_secret_key ``
 
-### Premium Partners
+4. Serve the Application
+<br/>
+Now, open [http://127.0.0.1:8000/stripe] in your browser.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+## Usage
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Enter your billing and card details.
+- Click "Pay Now" to process the payment.
+- If successful, you will see a success message.
+- If there's an error, an alert will appear with the issue details.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# stripe-integration-laravel
+This project is open-source and available under the MIT License.
