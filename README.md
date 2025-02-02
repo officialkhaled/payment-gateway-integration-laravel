@@ -11,10 +11,10 @@ This is a simple Laravel project demonstrating Stripe Payment Gateway integratio
 
 ## Features
 
--✅ Secure payment processing with Stripe API
--✅ Customer creation and payment handling
--✅ Frontend validation before submitting payment
--✅ Laravel Session Flash Messages for success/error responses
+- ✅ Secure payment processing with Stripe API
+- ✅ Customer creation and payment handling
+- ✅ Frontend validation before submitting payment
+- ✅ Laravel Session Flash Messages for success/error responses
 
 
 ## Installation
