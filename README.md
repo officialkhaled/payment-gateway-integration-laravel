@@ -4,13 +4,14 @@
     </a>
 </p>
 
-## Stripe Payment Gateway Integration with Laravel v10
+## Payment Gateway Integration with Laravel v10
 
-This is a simple Laravel project demonstrating Stripe Payment Gateway integration. It allows users to enter payment details and process transactions securely using Stripe.
+This is a simple Laravel project demonstrating Different Payment Gateway integrations. It lets users enter payment details and process transactions securely using Stripe, PayPal, bKash, etc.
 
 
 ## Features
 
+1. Stripe:
 - Secure payment processing with Stripe API
 - Customer creation and payment handling
 - Frontend validation before submitting payment
